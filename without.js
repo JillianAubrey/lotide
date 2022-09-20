@@ -1,20 +1,3 @@
-//FUNCTION IMPLMENTATION
-const without = function(source, itemsToRemove) {
-  if (itemsToRemove.length === 0) {  //Bypasses the function if there's no items to remove
-    return source;
-  }
-  
-  let result = [];
-
-  for (const item of source) {
-    if (!itemsToRemove.includes(item)) {
-      result.push(item);
-    }
-  }
-
-  return result;
-};
-
 // eqArrays and assertArrasEqual, for testing
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -36,6 +19,23 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`🔴️ Assertion Failed: ${actual} !== ${expected}`);
   }
+};
+
+//FUNCTION IMPLMENTATION
+const without = function(source, itemsToRemove) {
+  if (itemsToRemove.length === 0) {  //Bypasses the function if there's no items to remove
+    return source;
+  }
+  
+  let result = [];
+
+  for (const item of source) {
+    if (!itemsToRemove.includes(item)) {
+      result.push(item);
+    }
+  }
+
+  return result;
 };
 
 //TEST CODE

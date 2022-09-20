@@ -1,23 +1,3 @@
-//FUNCTION IMPLMENTATION
-const middle = function(arr) {
-  if (arr.length <= 2) {
-    return [];
-  }
-
-  const arrMid = Math.floor(arr.length / 2);
-  
-  if (isEven(arr.length)) {
-    return arr.slice(arrMid - 1, arrMid + 1);
-  } else {
-    return arr.slice(arrMid, arrMid + 1);
-  }
-};
-
-// helper function, isEven
-const isEven = function(num) {
-  return num % 2 === 0;
-};
-
 // eqArrays and assertArrasEqual, for testing
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -39,6 +19,26 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`🔴️ Assertion Failed: ${actual} !== ${expected}`);
   }
+};
+
+//FUNCTION IMPLMENTATION
+const middle = function(arr) {
+  if (arr.length <= 2) {
+    return [];
+  }
+
+  const arrMid = Math.floor(arr.length / 2);
+  
+  if (isEven(arr.length)) {
+    return arr.slice(arrMid - 1, arrMid + 1);
+  } else {
+    return arr.slice(arrMid, arrMid + 1);
+  }
+};
+
+// helper function, isEven
+const isEven = function(num) {
+  return num % 2 === 0;
 };
 
 //TEST CODE

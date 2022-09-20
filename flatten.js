@@ -1,20 +1,3 @@
-//FUNCTION IMPLMENTATION
-const flatten = function(source) {
-  let result = [];
-
-  for (const item of source) {
-    if (Array.isArray(item)) {
-      for (const innerItem of item) {
-        result.push(innerItem);
-      }
-    } else {
-      result.push(item);
-    }
-  }
-
-  return result;
-};
-
 // eqArrays and assertArrasEqual, for testing
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -36,6 +19,23 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`🔴️ Assertion Failed: ${actual} !== ${expected}`);
   }
+};
+
+//FUNCTION IMPLMENTATION
+const flatten = function(source) {
+  let result = [];
+
+  for (const item of source) {
+    if (Array.isArray(item)) {
+      for (const innerItem of item) {
+        result.push(innerItem);
+      }
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
 };
 
 //TEST CODE
