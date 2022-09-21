@@ -31,3 +31,9 @@ assertEqual(eqObjects(ab, ba), true);
 
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false);
+
+const ac = { a: "1", c: "3"};
+assertEqual(eqObjects(ab, ac), false);
+
+const acNum = { a: 1, c: 3};
+assertEqual(eqObjects(acNum, ac), false);
