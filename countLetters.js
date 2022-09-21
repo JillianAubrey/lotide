@@ -10,10 +10,13 @@ const assertEqual = function(actual, expected) {
 //FUNCTION IMPLEMENTATION
 const countLetters = function(str) {
   let result = {};
-  noSpacesLower = str.toLowerCase().split(' ').join('');
+  const noSpacesLower = str.toLowerCase().split(' ').join('');
   
   for (const char of noSpacesLower) {
-    console.log(char);
+    if (!result[char]) {
+      result[char] = 0;
+    }
+    result[char] ++;
   }
 
   return result;
@@ -21,9 +24,18 @@ const countLetters = function(str) {
 
 //TEST CODE
 let result = countLetters('LHL');
-console.log(result);
+//console.log(result);
 assertEqual(result['l'], 2);
-assertEqual(result['h'], 2);
+assertEqual(result['h'], 1);
 
-result = countLetters("lighthouse in the house")
-console.log(result);
+let testStr = 'lighthouse in the house';
+result = countLetters(testStr);
+//console.log(result);
+assertEqual(result['l'], 1);
+assertEqual(result['i'], 2);
+assertEqual(result['g'], 1);
+assertEqual(result['h'], 4);
+assertEqual(result['t'], 2);
+assertEqual(result['z'], undefined);
+//Test to ensure original string is not affected
+assertEqual(testStr, 'lighthouse in the house');
