@@ -11,7 +11,12 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(str) {
   let result = {};
   noSpacesLower = str.toLowerCase().split(' ').join('');
-  return noSpacesLower;
+  
+  for (const char of noSpacesLower) {
+    console.log(char);
+  }
+
+  return result;
 };
 
 //TEST CODE
