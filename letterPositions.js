@@ -40,7 +40,7 @@ const letterPositions = function(str) {
 };
 
 //TEST CODE
-let testStr = 'LHL'
+let testStr = 'LHL';
 let result = letterPositions(testStr);
 assertArraysEqual(result['l'], [0, 2]);
 assertArraysEqual(result['h'], [1]);
