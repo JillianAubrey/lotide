@@ -16,7 +16,35 @@ const eqObjects = function(object1, object2) {
   }
 
   for (const key in object1) {
-    if (!object2.hasOwnProperty(key) || object1[key] !== object2[key]) {
+    if (!object2.hasOwnProperty(key) || typeof(object1[key]) !== typeof(object2[key]) || Array.isArray(object1[key]) !== Array.isArray(object2[key])) {
+      return false;
+    }
+
+    if (Array.isArray(object1[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
+        return false;
+      }
+    } else if (typeof(object1[key]) === 'object') {
+      console.log(`Comparing ${object1[key]} to ${object2[key]}`)
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
+    } else if (object1[key] !== object2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+// eqArrays, a helper function
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
@@ -37,3 +65,14 @@ assertEqual(eqObjects(ab, ac), false);
 
 const acNum = { a: 1, c: 3};
 assertEqual(eqObjects(acNum, ac), false);
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertEqual(eqObjects(cd, dc), true);
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+assertEqual(eqObjects(cd, cd2), false);
+
+const cde = { c: "1", d: ["2", 3], e: {key: 'value'} };
+const ced = { c: "1", e: {key: 'value'}, d: ["2", 3] };
+assertEqual(eqObjects(cde, ced), true);
