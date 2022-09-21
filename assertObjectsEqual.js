@@ -1,6 +1,6 @@
 //FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect; 
+  const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
     console.log(`🟢️ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
@@ -15,7 +15,7 @@ const eqObjects = function(object1, object2) {
   }
 
   for (const key in object1) {
-    if (!object2.hasOwnProperty(key) || typeof(object1[key]) !== typeof(object2[key]) || Array.isArray(object1[key]) !== Array.isArray(object2[key])) {
+    if (!(key in object2) || typeof(object1[key]) !== typeof(object2[key]) || Array.isArray(object1[key]) !== Array.isArray(object2[key])) {
       return false;
     }
 
@@ -66,7 +66,7 @@ console.log('These should pass');
 assertObjectsEqual(ab, ba); // >> true
 assertObjectsEqual(cd, dc); // >> true
 assertObjectsEqual(cde, ced); // >> true
-console.log('These should fail')
+console.log('These should fail');
 assertObjectsEqual(ab, abc); // >> false
 assertObjectsEqual(ab, ac); // >> false
 assertObjectsEqual(acNum, ac); // >> false

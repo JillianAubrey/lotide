@@ -16,7 +16,7 @@ const eqObjects = function(object1, object2) {
   }
 
   for (const key in object1) {
-    if (!object2.hasOwnProperty(key) || typeof(object1[key]) !== typeof(object2[key]) || Array.isArray(object1[key]) !== Array.isArray(object2[key])) {
+    if (!(key in object2) || typeof(object1[key]) !== typeof(object2[key]) || Array.isArray(object1[key]) !== Array.isArray(object2[key])) {
       return false;
     }
 
@@ -25,7 +25,6 @@ const eqObjects = function(object1, object2) {
         return false;
       }
     } else if (typeof(object1[key]) === 'object') {
-      console.log(`Comparing ${object1[key]} to ${object2[key]}`)
       if (!eqObjects(object1[key], object2[key])) {
         return false;
       }
