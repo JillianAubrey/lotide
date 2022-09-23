@@ -12,7 +12,9 @@ const eqArrays = function(arr1, arr2) {
       if (!eqArrays(arr1[i], arr2[i])) {
         return false;
       }
-    } else if (arr1[i] !== arr2[i]) {
+      continue;
+    }
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
