@@ -24,11 +24,15 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
-    } else if (typeof(object1[key]) === 'object') {
+      continue;
+    }
+    if (typeof(object1[key]) === 'object') {
       if (!eqObjects(object1[key], object2[key])) {
         return false;
       }
-    } else if (object1[key] !== object2[key]) {
+      continue;
+    }
+    if (object1[key] !== object2[key]) {
       return false;
     }
   }
