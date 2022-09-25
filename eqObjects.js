@@ -8,23 +8,23 @@ const eqObjects = function(object1, object2) {
 
   for (const key in object1) {
     const type = _eqType(object1[key], object2[key]);
-    if (!type) {
-      return false;
-    }
-    if (type === 'array') {
-      if (!_eqArrays(object1[key], object2[key])) {
+    switch(type) {
+      case false:
         return false;
-      }
-      continue;
-    }
-    if (type === 'object') {
-      if (!eqObjects(object1[key], object2[key])) {
-        return false;
-      }
-      continue;
-    }
-    if (object1[key] !== object2[key]) {
-      return false;
+      case 'array':
+        if (!_eqArrays(object1[key], object2[key])) {
+          return false;
+        }
+        continue;
+      case 'object':
+        if (!eqObjects(object1[key], object2[key])) {
+          return false;
+        }
+        continue;
+      default:
+        if (object1[key] !== object2[key]) {
+          return false;
+        }
     }
   }
 

@@ -9,5 +9,3 @@ const eqType = function(item1, item2) {
 };
 
 module.exports = eqType;
-
-//TEST CODE

@@ -8,23 +8,23 @@ const eqArrays = function(arr1, arr2) {
 
   for (const i in arr1) {
     const type = _eqType(arr1[i], arr2[i]);
-    if (!type) {
-      return false;
-    }
-    if (type === 'array') {
-      if (!eqArrays(arr1[i], arr2[i])) {
+    switch(type) {
+      case false:
         return false;
-      }
-      continue;
-    }
-    if (type === 'object') {
-      if (!_eqObjects(arr1[i], arr2[i])) {
-        return false;
-      }
-      continue;
-    }
-    if (arr1[i] !== arr2[i]) {
-      return false;
+      case 'array':
+        if (!eqArrays(arr1[i], arr2[i])) {
+          return false;
+        }
+        continue;
+      case 'object':
+        if (!_eqObjects(arr1[i], arr2[i])) {
+          return false;
+        }
+        continue;
+      default:
+        if (arr1[i] !== arr2[i]) {
+          return false;
+        }
     }
   }
   return true;
