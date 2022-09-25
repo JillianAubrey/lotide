@@ -11,12 +11,18 @@ const eqObjects = function(object1, object2) {
     }
 
     if (Array.isArray(object1[key])) {
+      if (!Array.isArray(object2[key])) {
+        return false;
+      }
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
       continue;
     }
     if (typeof(object1[key]) === 'object') {
+      if (Array.isArray(object2[key])) {
+        return false;
+      }
       if (!eqObjects(object1[key], object2[key])) {
         return false;
       }
@@ -32,7 +38,8 @@ const eqObjects = function(object1, object2) {
 
 module.exports = eqObjects;
 
-//TEST CODE
+// //TEST CODE
+// const assertEqual = require('./assertEqual');
 // const ab = { a: "1", b: "2" };
 // const ba = { b: "2", a: "1" };
 // assertEqual(eqObjects(ab, ba), true);
