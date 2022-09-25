@@ -1,9 +1,9 @@
-const eqObjects = require('./eqObjects');
+const _eqObjects = require('./eqObjects');
 
 //FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
-  if (eqObjects(actual, expected)) {
+  if (_eqObjects(actual, expected)) {
     console.log(`🟢️ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
     return;
   }
