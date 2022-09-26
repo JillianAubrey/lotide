@@ -2,10 +2,6 @@
   "name": "@jaubrey/lotide",
   "version": "1.0.0",
   "description": "A mini clone of the [Lodash](https://lodash.com) library. (For learning purposes only, not intended for use.)",
-  "author": {
-    "name": "Jillian Aubrey",
-    "url": "https://github.com/JillianAubrey"
-  },
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -18,7 +14,10 @@
     "url": "git+https://github.com/JillianAubrey/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Jillian Aubrey",
+    "url": "https://github.com/JillianAubrey"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JillianAubrey/lotide/issues"
