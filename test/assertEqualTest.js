@@ -1,7 +1,7 @@
 const assertEqual = require('../assertEqual');
 
 console.log('---');
-console.log('assertEqual');
+console.log('#assertEqual');
 console.log('These should pass:');
 assertEqual(1, 1);
 assertEqual(1 + 2, 3);

@@ -11,8 +11,8 @@ describe("#eqArrays", () => {
   });
   it("returns false when arr1 and arr2 are differnt", () => {
     assert.strictEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-  assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-  assert.strictEqual(eqArrays([1], [1, 2]), false);
-  assert.strictEqual(eqArrays([[1]], [1]), false);
+    assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+    assert.strictEqual(eqArrays([1], [1, 2]), false);
+    assert.strictEqual(eqArrays([[1]], [1]), false);
   });
 });

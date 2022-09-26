@@ -1,7 +1,7 @@
 const assertArraysEqual = require('../assertArraysEqual');
 
 console.log('---');
-console.log('assertArraysEqual');
+console.log('#assertArraysEqual');
 console.log('These should pass:');
 assertArraysEqual([1, 2, 3], [1, 2, 3]); //TRUE
 assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); //TRUE
