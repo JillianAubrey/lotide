@@ -1,5 +1,4 @@
 const _eqType = require('./eqType');
-const _eqObjects = require('./eqObjects');
 
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -15,12 +14,9 @@ const eqArrays = function(arr1, arr2) {
       if (!eqArrays(arr1[i], arr2[i])) {
         return false;
       }
-      continue;
+      break;
     case 'object':
-      if (!_eqObjects(arr1[i], arr2[i])) {
-        return false;
-      }
-      continue;
+      throw new Error('eqArrays cannot handle nested obects');
     default:
       if (arr1[i] !== arr2[i]) {
         return false;
