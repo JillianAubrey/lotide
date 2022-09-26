@@ -1,6 +1,6 @@
-const map = function(array, callback) {
+const map = function(arr, callback) {
   let result = [];
-  for (const item of array) {
+  for (const item of arr) {
     result.push(callback(item));
   }
   return result;

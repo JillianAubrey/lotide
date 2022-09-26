@@ -1,7 +1,7 @@
-const takeUntil = function(array, callback) {
+const takeUntil = function(arr, callback) {
   let result = [];
 
-  for (const element of array) {
+  for (const element of arr) {
     if (callback(element)) {
       return result;
     }

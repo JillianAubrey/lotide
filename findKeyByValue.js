@@ -1,6 +1,6 @@
-const findKeyByValue = function(object, value) {
-  for (const key in object) {
-    if (object[key] === value) {
+const findKeyByValue = function(obj, val) {
+  for (const key in obj) {
+    if (obj[key] === val) {
       return key;
     }
   }
