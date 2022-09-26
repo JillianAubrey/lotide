@@ -1,8 +1,12 @@
 {
   "name": "@jaubrey/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library. (For learning purposes only, not intended for use.)",
+  "author": {
+    "name": "Jillian Aubrey",
+    "url": "https://github.com/JillianAubrey"
+  },
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
