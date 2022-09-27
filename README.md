@@ -56,7 +56,7 @@ The following functions are currently implemented:
   * callback will only be passed the array element itself.
 * `middle(arr)`: Returns the middle element(s) of arr, as an array. If arr's length is 2 or less returns an empty array. If arr has an odd length returns the middle element (e.g. `middle([1, 2, 3])` returns `[2]`). Ir arr has an even length, returns the two middle elements (e.g. `middle([1, 2, 3, 4])` returns `[2, 3]`).
 * `tail(arr)`: Returns all but the first element of arr, as an array.
-* `takeUntil(arr, callback)`: Returns an array containing all elements of arr up to, but not including, the first element that makes callback return false.
+* `takeUntil(arr, callback)`: Returns an array containing all elements of arr up to, but not including, the first element that makes callback return falsy.
   * callback will only be passed the array element itself.
 * `without(source, itemsToRemove)`: Returns an array containing all the elements of the soure array, but without the elements of itemsToRemove. source and itemsToRemove must both be arrays.
   * Only supports primitive elements
