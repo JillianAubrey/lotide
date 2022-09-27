@@ -32,7 +32,7 @@ The following functions are currently implemented:
 * `assertObjectsEqual()`: console.logs whether the assertion that actual is equal to expected passed or failed. eqObjects is used for comparision.
 * `countLetters()`: Returns an object with counts for each of the letters in str.
   * Case insensitive, all keys in returned object will be lower case.
-* `countOnly(allItems, itemsToCount))`: Returns an object with the count of itemsToCount's elements found within allItems. 0 counts are not included in the object. allItems and itemsToCount must both be arrays. Only supports primitive elements.
+* `countOnly(allItems, itemsToCount))`: Returns an object with the count of itemsToCount's keys with truthy values found within allItems. 0 counts are not included in the object. allItems must be an array and itemsToCount and object. Only supports primitive elements.
 * `deepEqual(item1, item2)`: Returns true if items1 and item2 are identical and false if not.
   * Supports any amount of array/object nesting.
   * Does not support nested functions/methods

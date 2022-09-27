@@ -19,7 +19,7 @@ describe("#countLetters", () => {
       u: 2,
       s: 2,
       e: 2,
-    }
+    };
     assert.deepEqual(actual,expected);
   });
   it("doesn't include letters not in the string", () => {
