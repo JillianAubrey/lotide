@@ -1,6 +1,6 @@
 {
   "name": "@jaubrey/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A mini clone of the [Lodash](https://lodash.com) library. (For learning purposes only, not intended for use.)",
   "main": "index.js",
   "directories": {
