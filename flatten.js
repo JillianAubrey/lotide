@@ -15,14 +15,3 @@ const flatten = function(source) {
 };
 
 module.exports = flatten;
-
-// //TEST CODE
-// assertArraysEqual(flatten([1, [2, 3]]), [1, 2, 3]);
-// assertArraysEqual(flatten([1, 2, 3]), [1, 2, 3]);
-// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-// assertArraysEqual(flatten(['a', ['b', 'c']]), ['a', 'b', 'c']);
-
-// //Test whether input array is modified
-// const testArr = [1, [2, 3]];
-// flatten(testArr);
-// assertArraysEqual(testArr[1], [2, 3]); //assertArraysEqual cannot handle nested arrays, therefor just checking individual array element
