@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const letterPositions = require('../letterPositions');
 
-describe("#flatten", () => {
+describe("#lettPositions", () => {
   it("returns an object with positions of each letter", () => {
     let testStr = 'LHL';
     let actual = letterPositions(testStr);
